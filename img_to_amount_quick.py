@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import PIL
 
-img = cv.imread("s2.png")
+img = cv.imread("screenshot.png")
 img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 
 # resize image

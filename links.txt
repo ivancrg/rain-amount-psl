@@ -1,0 +1,16 @@
+RGB slika, ulaz 1 --> http://www.brucelindbloom.com/index.html?RGB16Million.html
+USA slika, ulaz 2 --> https://static01.nyt.com/newsgraphics/2021/07/26/deluge-and-drought/9f51826295bc23fe41c580c3aa9180c50d9186c1/us_normal-Artboard_1_copy_2.jpg
+
+
+https://www.rainviewer.com/api/legacy.html
+https://www.rainviewer.com/api/examples.html
+https://www.maptiler.com/google-maps-coordinates-tile-bounds-projection/#10/14.47/45.31
+https://www.rainviewer.com/api/color-schemes.html
+https://tilecache.rainviewer.com/v2/radar/1642685400/512/2/2/1/1/1_1.png
+https://tilecache.rainviewer.com/v2/radar/1642685400/512/0/0/124/1/0_0.png
+https://developers.google.com/maps/documentation/tile/#tile_requests
+
+https://stackoverflow.com/questions/9356724/google-map-api-zoom-range
+
+https://gis.stackexchange.com/questions/188412/how-to-georeference-a-tile-downloaded-from-google-maps
++ areacalc
