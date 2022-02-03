@@ -2,9 +2,6 @@ import cv2 as cv
 import numpy as np
 import math
 
-# Threshold used during RGB comparisons
-THRESHOLD = 20
-
 # Loading CSV data for converting RGB to dbZ
 DATA = np.loadtxt('./dZzavg_color_CPo.csv', comments='%', delimiter=',', encoding='utf8', skiprows=1)
 dbZRGB = DATA[1:, :]
@@ -22,7 +19,7 @@ def rgb_diff(r1, g1, b1, r2, g2, b2):
 
 # Converting pixel's RGB to
 # mm of rain per hour
-def rgb_to_mmph(r, g, b):
+def rgb_to_mmph(r, g, b, thresh):
     if r == 0 and g == 0 and b == 0:
         return 0
 
@@ -37,12 +34,13 @@ def rgb_to_mmph(r, g, b):
             rgb_difference = ith_rgb_diff
             dbz = dbZRGB[i][0]
 
-    if rgb_difference < THRESHOLD:
+    if rgb_difference < thresh:
         return dbz_to_mmph(dbz)
     
     return 0
 
-def img_to_amount(img_name, area):
+# Image, covered area, threshold for RGB diff
+def img_to_amount(img_name, area, thresh):
     img = cv.imread(img_name)
     img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 
@@ -69,7 +67,7 @@ def img_to_amount(img_name, area):
 
         # Adding color's 'contribution' to lph
         # Liters per hour = area (m^2) * mm per hour (mm/h)
-        liters_per_hour += percentage / 100 * area * rgb_to_mmph(uc[0][0], uc[0][1], uc[0][2])
+        liters_per_hour += percentage / 100 * area * rgb_to_mmph(uc[0][0], uc[0][1], uc[0][2], thresh)
 
         # print(f'{uc[0]}\t{uc[1]}\t{round(percentage, 2)}%')
     
