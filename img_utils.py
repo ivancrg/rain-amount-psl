@@ -9,24 +9,20 @@ THRESHOLD = 20
 DATA = np.loadtxt('./dZzavg_color_CPo.csv', comments='%', delimiter=',', encoding='utf8', skiprows=1)
 dbZRGB = DATA[1:, :]
 
-# Converting dbZ value to meters
-# (standard is mm, but area is in m^2)
-def dbz_to_mph(dbz):
+# Converting dbZ value to mm/h
+def dbz_to_mmph(dbz):
     # Converting dbZ to mm/h
     mmph = ((10 ** (dbz / 10)) / (200)) ** (5 / 8)
 
-    # Converting to m/h
-    mph = mmph / 1000
-
-    return mph
+    return mmph
 
 # For color comparison purposes
 def rgb_diff(r1, g1, b1, r2, g2, b2):
     return math.sqrt((r1 - r2) ** 2 + (g1 - g2) ** 2 + (b1 - b2) ** 2)
 
 # Converting pixel's RGB to
-# meters of rain
-def rgb_to_mph(r, g, b):
+# mm of rain per hour
+def rgb_to_mmph(r, g, b):
     if r == 0 and g == 0 and b == 0:
         return 0
 
@@ -42,7 +38,7 @@ def rgb_to_mph(r, g, b):
             dbz = dbZRGB[i][0]
 
     if rgb_difference < THRESHOLD:
-        return dbz_to_mph(dbz)
+        return dbz_to_mmph(dbz)
     
     return 0
 
@@ -72,7 +68,8 @@ def img_to_amount(img_name, area):
         percentage = uc[1] / img_px_cnt * 100
 
         # Adding color's 'contribution' to lph
-        liters_per_hour += percentage / 100 * area * rgb_to_mph(uc[0][0], uc[0][1], uc[0][2])
+        # Liters per hour = area (m^2) * mm per hour (mm/h)
+        liters_per_hour += percentage / 100 * area * rgb_to_mmph(uc[0][0], uc[0][1], uc[0][2])
 
         # print(f'{uc[0]}\t{uc[1]}\t{round(percentage, 2)}%')
     
