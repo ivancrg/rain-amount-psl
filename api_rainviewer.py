@@ -2,6 +2,9 @@ from urllib.request import urlopen
 import json
 import requests
 
+# Downloads radar image (map tile
+# (x, y) at zoom level z) and saves
+# it as image_name.png
 def getImage(image_name, x, y, z):
     settings_url = "https://api.rainviewer.com/public/weather-maps.json"
     settings_response = urlopen(settings_url)
