@@ -1,5 +1,5 @@
 import requests
-#import cv2 as cv
+import cv2 as cv
 
 # Downloads sattelite/terrain/map/hybrid
 # image (map tile  (x, y) at zoom level z)
@@ -15,20 +15,16 @@ def getImage(image_name, x, y, z, display_opt, width, height):
     image_url = f"http://mt1.google.com/vt/lyrs={display_opt}&x={x}&y={y}&z={z}"
     print(image_url)
 
-    # TESTING
-    #image_url = "https://tilecache.rainviewer.com/v2/radar/1643832600/512/6/33/22/1/0_0.png"
-
     image_data = requests.get(image_url).content
 
     with open(image_name, 'wb') as handler:
         handler.write(image_data)
     
-    # TODO instal cv2 and remove this
     # Open and resize image
-    #image = cv.imread(image_name)
-    #dim = (width, height)
-    #image = cv.resize(image, dim, interpolation = cv.INTER_AREA)
-    #cv.imwrite(image_name, image)
+    image = cv.imread(image_name)
+    dim = (width, height)
+    image = cv.resize(image, dim, interpolation = cv.INTER_AREA)
+    cv.imwrite(image_name, image)
 
 # Testing
-#getImage("tile.png", 17, 11, 5, "m", 150, 300)
+# getImage("tile.png", 17, 11, 5, "m", 150, 300)
