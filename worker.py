@@ -9,4 +9,4 @@ def get_liters_per_hour(phi, lam, zoom):
     
     return img_utils.img_to_amount("s.png", area)
 
-print(get_liters_per_hour(52.127610, 27.766357, 4))
+print(get_liters_per_hour(42.901146, 28.908935, 5))

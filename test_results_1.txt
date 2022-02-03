@@ -1,22 +1,24 @@
 UPPER LEFT QUARTER
-https://tilecache.rainviewer.com/v2/radar/1643845200/512/6/34/22/1/0_0.png
-4179158.5039393515 liters per hour
+https://tilecache.rainviewer.com/v2/radar/1643847600/512/5/18/10/1/0_0.png
+45836339425.47852 liters per hour
 
 UPPER RIGHT QUARTER
-https://tilecache.rainviewer.com/v2/radar/1643845200/512/6/35/22/1/0_0.png
-1159151.4290211045 liters per hour
+https://tilecache.rainviewer.com/v2/radar/1643847600/512/5/19/10/1/0_0.png
+88262397762.50897 liters per hour
 
 LOWER RIGHT QUARTER
-https://tilecache.rainviewer.com/v2/radar/1643845200/512/6/35/23/1/0_0.png
-449344.07755822403 liters per hour
+https://tilecache.rainviewer.com/v2/radar/1643847600/512/5/19/11/1/0_0.png
+100449192742.29947 liters per hour
 
 LOWER LEFT QUARTER
-https://tilecache.rainviewer.com/v2/radar/1643845200/512/6/34/23/1/0_0.png
-14904.923841598245 liters per hour
+https://tilecache.rainviewer.com/v2/radar/1643847600/512/5/18/11/1/0_0.png
+30803393302.646954 liters per hour
+
+SUM FROM QUARTERS: approx. 265351293231 per hour
 
 
 TOTAL
-https://tilecache.rainviewer.com/v2/radar/1643845200/512/5/17/11/1/0_0.png
-6186947.769210765 liters per hour
+https://tilecache.rainviewer.com/v2/radar/1643847600/512/4/9/5/1/0_0.png
+290640697624.90344 liters per hour
 
-DIFFERENCE - approx. 6%
+DIFFERENCE - approx. 8.5%
